@@ -11,11 +11,10 @@ from utils import *
 st.set_page_config(layout="wide")
 
 # Load environment variables from .env file
-load_dotenv()
-AWS_ACCESS_KEY = os.getenv('AWS_ACCESS_KEY')
-AWS_SECRET_KEY = os.getenv('AWS_SECRET_KEY')
-BUCKET_NAME = os.getenv('BUCKET_NAME')
-S3_REGION = os.getenv('S3_REGION')
+AWS_ACCESS_KEY = st.secrets["AWS_ACCESS_KEY"]
+AWS_SECRET_KEY = st.secrets["AWS_SECRET_KEY"]
+BUCKET_NAME = st.secrets["BUCKET_NAME"]
+S3_REGION = st.secrets["S3_REGION"]
 
 def download_file_from_s3(file_name, local_path):
     s3 = boto3.client(
