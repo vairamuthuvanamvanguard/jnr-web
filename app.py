@@ -8,14 +8,10 @@ from folium.plugins import MarkerCluster
 from polyline import decode
 import pandas as pd
 from geopy.distance import geodesic
-from dotenv import load_dotenv
 import os
 
-# Load environment variables from .env file
-load_dotenv()
-
-# Get API key from environment variable
-api_key = os.getenv("GOOGLE_MAPS_API_KEY")
+# Get API key from Streamlit secrets
+api_key = st.secrets["GOOGLE_MAPS_API_KEY"]
 
 # Function to load GeoJSON data from a file path
 def load_geojson(file_path):
