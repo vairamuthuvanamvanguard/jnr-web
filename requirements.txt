@@ -7,7 +7,7 @@ rioxarray
 pandas
 geopy
 geopandas
-dotenv
+python-dotenv
 xarray-spatial
 jupyter-server-proxy
 keplergl
